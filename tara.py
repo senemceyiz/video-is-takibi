@@ -165,8 +165,9 @@ KAYNAKLAR = [
     ("We Work Remotely", weworkremotely),
     ("Remotive", remotive),
     ("Himalayas", himalayas),
-    ("Reddit r/forhire", lambda: reddit("forhire", True)),
+    # Reddit bulut sunucularını sık sınırlıyor; daha değerli olan video grubu önce gelsin
     ("Reddit r/VideoEditingRequests", lambda: reddit("VideoEditingRequests", False)),
+    ("Reddit r/forhire", lambda: reddit("forhire", True)),
 ]
 
 # ---------------------------------------------------------------- sınıflandırma

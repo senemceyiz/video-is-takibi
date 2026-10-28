@@ -36,7 +36,8 @@
 - Bilgisayarda `gh` yok; GitHub'a gönderme Git Credential Manager ile (tarayıcıda kullanıcı kendisi giriş yapar).
 - Claude kullanımı harcamaz. Yorum gerektiren haftalık analiz/öğrenme planı güncellemesi için ileride bir Claude routine eklenebilir.
 - GitHub, 60 gün hiç etkinlik olmayan depolarda zamanlanmış görevi kapatabilir; günlük kayıtlar bunu genelde önler. Kapanırsa Actions sekmesinden yeniden açılır.
-- Bilinen risk: Reddit, bulut sunucularından gelen istekleri sık engeller (403/429). Engellenirse Reddit kaynakları rapor sayfasında hata olarak görünür; diğer kaynaklar çalışmaya devam eder.
+- Canlı: depo github.com/senemceyiz/video-is-takibi, sayfa https://senemceyiz.github.io/video-is-takibi/ (ilk bulut çalışması 2026-10-28 başarılı).
+- Bilinen risk: Reddit, bulut sunucularından gelen istekleri sık engeller (403/429). İlk bulut çalışmasında r/forhire geldi, r/VideoEditingRequests 429 verdi; birkaç gün izlenmeli. Sürekli engellenirse seçenek: kullanıcının kendi Reddit hesabıyla resmi API (kurulumu kullanıcı yapar). Engellenirse Reddit kaynakları rapor sayfasında hata olarak görünür; diğer kaynaklar çalışmaya devam eder.
 
 ## Bilinen sınırlamalar
 - Ücretler ilan metninden kaba kurallarla çıkarılır; kesin değildir.

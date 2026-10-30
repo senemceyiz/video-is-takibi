@@ -152,8 +152,10 @@ def reddit(alt, sadece_hiring):
         metin = f"{baslik} {duz_metin(icerik)}"
         if sadece_hiring and not (re.match(r"\s*\[hiring\]", baslik, re.I) and BASLIK_VIDEO.search(metin)):
             continue
-        # Kendi hizmetini sunan editörleri, ücretsiz/karşılıksız istekleri ve soruları ele
-        if not ISVEREN.search(metin) or HIZMET_SUNAN.search(baslik) or UCRETSIZ.search(metin):
+        # Kendi hizmetini sunan editörleri, ücretsiz/karşılıksız istekleri, soruları ve
+        # sohbet gönderilerini ele: başlık iş arıyor olmalı ya da en azından "editor" geçmeli
+        isveren = ISVEREN.search(baslik) or (re.search(r"editor", baslik, re.I) and ISVEREN.search(metin))
+        if not isveren or HIZMET_SUNAN.search(baslik) or UCRETSIZ.search(metin):
             continue
         link = e.find(ATOM + "link").get("href")
         yield ilan(f"Reddit r/{alt}", e.findtext(ATOM + "id"), baslik, link, icerik,
